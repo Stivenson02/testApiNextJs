@@ -11,6 +11,7 @@ export class ContainerController {
     @Post()
     create(@Body() body: any){
         let budget= body["budget"]
+        let budget_total = budget
         const containers= body["containers"]
         const new_array=[]
         containers.forEach(element => {
@@ -28,11 +29,16 @@ export class ContainerController {
             budget = budget - container["total"]
             if (budget <= 0){
                 new_array.push({"name": container["name"]})
+            }else{
+                budget = budget + container["total"] 
             }
         });
 
+        let stat_butget={ budget_total: budget_total, budget_dispatched: (budget_total - budget), budget_no_dispatched: budget}
 
-        return new_array;
+        this.containerService.createStat(stat_butget);
+
+        return stat_butget;
     }
 
 }
