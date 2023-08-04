@@ -15,30 +15,23 @@ export class ContainerService {
         @InjectRepository(Stat) private statsRepo: Repository<Stat>
     ){}
 
-    findAll(){
-        this.budgetsRepo.find()
-    }
-
-    findOne(id: number){
-        return this.budgetsRepo.findOne(id);
-    }
 
     createBudget(body: any){
-        const newBudet = this.budgetsRepo.create(body)
-        return this.budgetsRepo.save(newBudet)
+        const newBudet = this.budgetsRepo.create(body);
+        return this.budgetsRepo.save(newBudet);
     }
 
     createContainer(body: any){
-        const newContainer = this.containersRepo.create(body)
-        return this.containersRepo.save(newContainer)
+        const newContainer = this.containersRepo.create(body);
+        return this.containersRepo.save(newContainer);
     }
 
     createStat(body: any){
-        const newStat = this.statsRepo.create(body)
-        return this.statsRepo.save(newStat)
+        const newStat = this.statsRepo.create(body);
+        return this.statsRepo.save(newStat);
     }
 
-    findAllStat(id: number){
+    findAllStat(){
         return this.statsRepo.find();
     }
 

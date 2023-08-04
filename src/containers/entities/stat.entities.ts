@@ -1,4 +1,4 @@
-import { Entity, Column, PrimaryGeneratedColumn, OneToMany, ManyToOne } from "typeorm";
+import { Entity, Column, PrimaryGeneratedColumn, OneToOne, JoinColumn } from "typeorm";
 import { Container } from "./container.entities";
 import { Budget } from "./budget.entities";
 
@@ -8,14 +8,13 @@ export class Stat {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @Column({default: false})
-    dispatch: boolean;
+    @Column()
+    budget_total: number;
 
-    @ManyToOne(() => Container, (container) => container.stats)
-    container: Container
+    @Column()
+    budget_dispatched: number;
 
-    @ManyToOne(() => Budget, (budget) => budget.stats)
-    budget: Budget
-
+    @Column()
+    budget_no_dispatched: number;
 
 }

@@ -16,10 +16,10 @@ export class Container {
     @Column()
     amount: number;
 
+    @Column()
+    total: number;
+
     @ManyToOne(() => Budget, (budget) => budget.containers)
     budget: Budget
-
-    @OneToMany(() => Stat, (stat) => stat.container)
-    stats : Stat[]
 
 }
