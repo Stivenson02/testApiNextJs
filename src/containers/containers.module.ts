@@ -3,9 +3,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 
 import { ContainerController } from './controllers/container.controller';
 import { ContainerService } from './services/container.service';
-import { Budget } from './entities/budget.entities';
-import { Container } from './entities/container.entities';
-import { Stat } from './entities/stat.entities';
+import { Budget } from './entities/budget.entity';
+import { Container } from './entities/container.entity';
+import { Stat } from './entities/stat.entity';
 import { StatController } from './controllers/stat.controller';
 
 @Module({

@@ -27,10 +27,11 @@ export class ContainerController {
 
         container_orders.forEach(container => {
             budget = budget - container["total"]
-            if (budget <= 0){
+            if (budget >= 0){
                 new_array.push({"name": container["name"]})
-            }else{
-                budget = budget + container["total"] 
+            }
+            if (budget < 0){
+                budget = budget + container["total"]
             }
         });
 
@@ -38,7 +39,7 @@ export class ContainerController {
 
         this.containerService.createStat(stat_butget);
 
-        return stat_butget;
+        return new_array;
     }
 
 }

@@ -1,6 +1,5 @@
 import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, OneToMany } from "typeorm";
-import { Budget } from "./budget.entities";
-import { Stat } from "./stat.entities";
+import { Budget } from "./budget.entity";
 
 @Entity()
 export class Container {

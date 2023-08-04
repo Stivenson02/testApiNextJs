@@ -2,9 +2,9 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 
-import { Budget } from '../entities/budget.entities';
-import { Container } from '../entities/container.entities';
-import { Stat } from '../entities/stat.entities';
+import { Budget } from '../entities/budget.entity';
+import { Container } from '../entities/container.entity';
+import { Stat } from '../entities/stat.entity';
 
 @Injectable()
 export class ContainerService {
